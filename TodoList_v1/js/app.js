@@ -31,10 +31,10 @@ $form.onsubmit = e => {
   addTodo();
 };
 
-$todos.onchange = ({ target }) => {
-  console.log(target.nextElementSibling);
-  target.nextElementSibling.style.textDecoration = target.checked ? 'line-through' : 'none';
-};
+// $todos.onchange = ({ target }) => {
+//   console.log(target.nextElementSibling);
+//   target.nextElementSibling.style.textDecoration = target.checked ? 'line-through' : 'none';
+// };
 
 $todos.onclick = e => {
   if (!e.target.classList.contains('remove')) return;

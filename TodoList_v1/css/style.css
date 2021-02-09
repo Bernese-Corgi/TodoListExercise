@@ -1,0 +1,4 @@
+.todos > li > input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  color: #a1a1a1;
+}
