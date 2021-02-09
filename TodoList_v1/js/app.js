@@ -1,12 +1,43 @@
+const $form = document.querySelector('form');
 const $inputTodo = document.querySelector('.input-todo');
 const $add = document.querySelector('.add');
 const $todos = document.querySelector('.todos');
 
-$add.onclick = () => {
+const addTodo = () => {
   const value = $inputTodo.value;
-  // 객체 디스트럭칭 할당
-  // const { value } = $inputTodo;
-  console.log(value);
-  $todos.innerHTML += `<li>${value}</li>`
-  $inputTodo.value = ''; // 이 방식으로는 지워지지 않는다. 변수에 있는 문자를 빈 문자열로 재할당했을뿐.
+  if (!value) return;
+
+  const $li = document.createElement('li');
+  const $checkbox = document.createElement('input');
+  const $span = document.createElement('span');
+  const $remove = document.createElement('button');
+
+  $checkbox.setAttribute('type', 'checkbox');
+  $span.textContent = value;
+  $remove.classList.add('remove');
+  $remove.textContent = 'x';
+
+  $li.appendChild($checkbox);
+  $li.appendChild($span);
+  $li.appendChild($remove);
+  $todos.appendChild($li);
+
+  $inputTodo.value = '';
+  $inputTodo.focus();
+};
+
+$form.onsubmit = e => {
+  e.preventDefault();
+  addTodo();
+};
+
+// $todos.onchange = ({ target }) => {
+//   console.log(target.nextElementSibling);
+//   target.nextElementSibling.style.textDecoration = target.checked ? 'line-through' : 'none';
+// };
+
+$todos.onclick = e => {
+  if (!e.target.classList.contains('remove')) return;
+  // console.log(e.target);
+  e.target.parentNode.remove();
 };
