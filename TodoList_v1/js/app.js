@@ -7,19 +7,19 @@ const addTodo = () => {
   const value = $inputTodo.value;
   if (!value) return;
 
-  // innerHTML의 대체
   const $li = document.createElement('li');
-  const textNode = document.createTextNode(value);
-
-  // remove 버튼과 텍스트
+  const $checkbox = document.createElement('input');
   const $span = document.createElement('span');
   const $remove = document.createElement('button');
 
+  // remove 버튼과 텍스트
+
+  $checkbox.setAttribute('type', 'checkbox');
   $span.textContent = value;
   $remove.classList.add('remove');
   $remove.textContent = 'x';
 
-  $li.appendChild(textNode);
+  $li.appendChild($checkbox);
   $li.appendChild($span);
   $li.appendChild($remove);
   $todos.appendChild($li);
