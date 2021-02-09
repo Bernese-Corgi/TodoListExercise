@@ -3,6 +3,7 @@ let todos = [];
 const $todos = document.querySelector('.todos');
 
 const fetchTodos = () => {
+  // TODO: 서버로부터 todos 데이터를 취득한다. (잠정 처리)
   todos = [
     { id: 1, content: 'HTML', completed: true },
     { id: 2, content: 'CSS', completed: true },
@@ -22,8 +23,4 @@ const render = () => {
   </li>`).join('');
 };
 
-애플리케이션이 구동하자마자, 서버에서 데이터를 가져오는 일을 먼저 해야한다. (= fetchTodos 함수의 일)
-DOMContentLoaded 를 이용(DOMContentLoaded 이벤트는 addEventListener로만 가능)
-두번쨰는 이벤트 핸들러를 주는 자리 -> 호출문으로 작성하면 안되고, 함수 이름을 써야한다
-애플리케이션이 구동하자마자 fetchTodos 함수를 호출한다.
-  document.addEventListener('DOMContentLoaded', fetchTodos);
+document.addEventListener('DOMContentLoaded', fetchTodos);
