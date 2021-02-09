@@ -10,7 +10,18 @@ const addTodo = () => {
   // innerHTML의 대체
   const $li = document.createElement('li');
   const textNode = document.createTextNode(value);
+
+  // remove 버튼과 텍스트
+  const $span = document.createElement('span');
+  const $remove = document.createElement('button');
+
+  $span.textContent = value;
+  $remove.classList.add('remove');
+  $remove.textContent = 'x';
+
   $li.appendChild(textNode);
+  $li.appendChild($span);
+  $li.appendChild($remove);
   $todos.appendChild($li);
 
   $inputTodo.value = '';
