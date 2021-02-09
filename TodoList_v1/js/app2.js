@@ -16,7 +16,8 @@ const fetchTodos = () => {
 const render = () => {
   $todos.innerHTML =
     todos
-      .map({ id, content, completed } => `<li id="${id}">
+      .map(
+        ({ id, content, completed }) => `<li id="${id}">
   <input type="checkbox" ${completed ? 'checked' : ''} />
   <span>${content}</span>
   <button class="remove">x</button>
@@ -24,3 +25,4 @@ const render = () => {
 };
 
 document.addEventListener('DOMContentLoaded', fetchTodos);
+
