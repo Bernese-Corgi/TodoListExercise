@@ -7,9 +7,13 @@ const addTodo = () => {
   const value = $inputTodo.value;
   if (!value) return;
 
-  // innerHTML의 대체
   const $li = document.createElement('li');
+  // input요소로 checkbox 생성
+  const $checkbox = document.createElement('input');
+  // input 요소의 어트리뷰트를 체크박스로 지정
+  $checkbox.setAttribute('type', 'checkbox');
   const textNode = document.createTextNode(value);
+
   $li.appendChild(textNode);
   $todos.appendChild($li);
 
