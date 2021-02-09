@@ -31,9 +31,9 @@ $form.onsubmit = e => {
   addTodo();
 };
 
-$todos.onchange = e => {
-  console.log(e.target.nextElementSibling);
-  e.target.nextElementSibling.style.textDecoration = e.target.checked ? 'line-through' : 'none';
+$todos.onchange = ({ target }) => {
+  console.log(target.nextElementSibling);
+  target.nextElementSibling.style.textDecoration = target.checked ? 'line-through' : 'none';
 };
 
 $todos.onclick = e => {
