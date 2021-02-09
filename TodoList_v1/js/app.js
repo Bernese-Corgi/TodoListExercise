@@ -7,7 +7,12 @@ const addTodo = () => {
   const value = $inputTodo.value;
   if (!value) return;
 
-  $todos.innerHTML += `<li>${value}</li>`
+  // innerHTML의 대체
+  const $li = document.createElement('li');
+  const textNode = document.createTextNode(value);
+  $li.appendChild(textNode);
+  $todos.appendChild($li);
+
   $inputTodo.value = '';
   $inputTodo.focus();
 };
