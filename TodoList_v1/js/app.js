@@ -4,7 +4,6 @@ const $add = document.querySelector('.add');
 const $todos = document.querySelector('.todos');
 
 const addTodo = () => {
-
   const value = $inputTodo.value;
   if (!value) return;
 
@@ -27,15 +26,13 @@ const addTodo = () => {
   $inputTodo.focus();
 };
 
-// $add.onclick = addTodo;
-
-// $inputTodo.onkeyup = e => {
-//   if (e.key !== 'Enter') return;
-
-//   addTodo();
-// };
-
 $form.onsubmit = e => {
   e.preventDefault();
   addTodo();
+};
+
+$todos.onclick = e => {
+  if (!e.target.classList.contains('remove')) return;
+  // console.log(e.target);
+  e.target.parentNode.remove();
 };
