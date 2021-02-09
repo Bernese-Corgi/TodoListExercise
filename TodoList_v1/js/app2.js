@@ -13,9 +13,9 @@ const fetchTodos = () => {
 const render = () => {
   $todos.innerHTML =
     todos
-      .map(todo => `<li id="${todo.id}">
-  <input type="checkbox" ${todo.completed ? 'checked' : ''} />
-  <span>${todo.content}</span>
+      .map({ id, content, completed } => `<li id="${id}">
+  <input type="checkbox" ${completed ? 'checked' : ''} />
+  <span>${content}</span>
   <button class="remove">x</button> 
 </li>`).join('');
 };
