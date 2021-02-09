@@ -31,6 +31,11 @@ $form.onsubmit = e => {
   addTodo();
 };
 
+$todos.onchange = e => {
+  console.log(e.target.nextElementSibling);
+  e.target.nextElementSibling.style.textDecoration = e.target.checked ? 'line-through' : 'none';
+};
+
 $todos.onclick = e => {
   if (!e.target.classList.contains('remove')) return;
   // console.log(e.target);
