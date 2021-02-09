@@ -1,3 +1,4 @@
+const $form = document.querySelector('form');
 const $inputTodo = document.querySelector('.input-todo');
 const $add = document.querySelector('.add');
 const $todos = document.querySelector('.todos');
@@ -11,8 +12,6 @@ const addTodo = () => {
   const $checkbox = document.createElement('input');
   const $span = document.createElement('span');
   const $remove = document.createElement('button');
-
-  // remove 버튼과 텍스트
 
   $checkbox.setAttribute('type', 'checkbox');
   $span.textContent = value;
@@ -28,10 +27,15 @@ const addTodo = () => {
   $inputTodo.focus();
 };
 
-$add.onclick = addTodo;
+// $add.onclick = addTodo;
 
-$inputTodo.onkeyup = e => {
-  if (e.key !== 'Enter') return;
+// $inputTodo.onkeyup = e => {
+//   if (e.key !== 'Enter') return;
 
+//   addTodo();
+// };
+
+$form.onsubmit = e => {
+  e.preventDefault();
   addTodo();
 };
