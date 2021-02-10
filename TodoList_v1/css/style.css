@@ -2,3 +2,92 @@
   text-decoration: line-through;
   color: #a1a1a1;
 }
+
+body {
+  background: antiquewhite;
+}
+
+.input-todo {
+  background-color: transparent;
+  border: none;
+}
+
+.input-todo:hover {
+  border-bottom: rgb(139, 139, 139) 1px solid;
+  
+}
+
+.input-todo:focus {
+  outline: none;
+  border-bottom: rgb(37, 37, 37) 1px solid;
+
+}
+
+.add {
+  /* border: 1px solid gray; */
+  width: 20px;
+  height: 20px;
+  line-height: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 50%;
+  /* background-color: maroon;
+  color: #fff; */
+  background-color: transparent;
+  color: maroon;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.add:hover {
+  /* box-shadow: rgba(0, 0, 0, 0.5) 2px -1px 5px; */
+  cursor: pointer;
+  transition: 0.4s;
+  transform: rotate(90deg);
+}
+
+.add:focus {
+  outline: none;
+}
+
+.remove {
+  /* border: 1px solid gray; */
+  width: 20px;
+  height: 20px;
+  line-height: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: maroon;
+}
+
+.remove:hover {
+  /* box-shadow: rgba(0, 0, 0, 0.5) 2px -1px 5px; */
+  cursor: pointer;
+  transition: 0.4s;
+  transform: rotate(90deg);
+}
+
+.remove:focus {
+  outline: none;
+}
+
+
+.todos {
+  padding-left: 10px;
+}
+
+.todos > li {
+  list-style: none;
+  
+}
+
+.todos > li > input[type="checkbox"] {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -19px top no-repeat;
+}
+
+
+.todos > li > input[type="checkbox"]:hover {
+  cursor: pointer;
+}
